@@ -1,12 +1,37 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="ru">
 <head>
-	<meta charset="UTF-8">
-	<meta http-equiv="X-UA-Comptatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Страница Кати Митиной</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Пошли на свидание?</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-	<h1>Вау это же моя страница!</h1>
+  <div class="container">
+    <div>
+      <h1 class="header_text">Паша, пошли на свидание?</h1>
+    </div>
+    <div class="gif_container">
+      <img src="img/pic.gif" alt="Cute cat">
+    </div>
+    <div class="buttons">
+      <button class="btn" id="Btn_yes" onclick="nextPage()">Да</button>
+      <button class="btn" id="Btn_no" onmouseover="moveButton()" onclick="moveButton()">Нет</button>
+      <script>
+        function nextPage(){
+          window.location.href="YesPage.html";
+        }
+
+        function moveButton(){
+          var x=Math.random()*(window.innerWidth-document.getElementById('Btn_no').offsetWidth)-85;
+          var y=Math.random()*(window.innerHeight-document.getElementById('Btn_no').offsetHeight)-48;
+          document.getElementById('Btn_no').style.left=`${x}px`;
+          document.getElementById('Btn_no').style.top=`${y}px`;
+
+        }
+      </script>
+    </div>
+  </div>
 </body>
+</html>
 </html>
